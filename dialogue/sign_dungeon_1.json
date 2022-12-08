@@ -1,0 +1,24 @@
+{
+	"Force" : 0,
+	"Random": 0,
+	"Nodes" :
+	 [
+		{
+			"id"      : 0,
+			"name"    : "Sign:",
+			"text"    : "Knawblin employees. If you turn that reset wheel, puzzles will reset.",
+			"next_id" : 1,
+			"choices" : []
+		},
+
+		{
+			"id"      : 1,
+			"name"    : "Sign:",
+			"text"    : "Do this if you get stuck!",
+			"next_id" : -1,
+			"choices" : []
+		}
+
+	]
+
+}

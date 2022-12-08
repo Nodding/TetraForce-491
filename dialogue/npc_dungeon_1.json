@@ -1,0 +1,24 @@
+{
+	"Force" : 0,
+	"Random": 0,
+	"Nodes" :
+	 [
+		{
+			"id"      : 0,
+			"name"    : "Nice Thief:",
+			"text"    : "Once you activate that skull challenge, my fellow thieves will attack you...",
+			"next_id" : 1,
+			"choices" : []
+		},
+
+		{
+			"id"      : 1,
+			"name"    : "Nice Thief:",
+			"text"    : "Sorry about them! They are all on edge since we are raiding the Knawblin king and their gold!",
+			"next_id" : -1,
+			"choices" : []
+		}
+
+	]
+
+}

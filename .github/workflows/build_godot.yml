@@ -1,0 +1,73 @@
+name: Build Godot Project
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Version
+        run: |
+          git rev-parse HEAD > semantic.version
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: TetraForce.x86_64
+          preset: linux
+          projectDir: '.'
+          debugMode: 'true'
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - linux
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+  windows:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [win32, win64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Version
+        run: |
+          git rev-parse HEAD > semantic.version
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: TetraForce.exe
+          preset: ${{ matrix.platform }}
+          projectDir: '.'
+          debugMode: 'true'
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - ${{ matrix.platform }}
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+  html5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Version
+        run: |
+          git rev-parse HEAD > semantic.version
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.0
+        with:
+          name: index.html
+          preset: HTML5
+          projectDir: '.'
+          debugMode: 'true'
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - HTML5
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}

@@ -1,0 +1,24 @@
+{
+	"Force" : 0,
+	"Random": 0,
+	"Nodes" :
+	 [
+		{
+			"id"      : 0,
+			"name"    : "Secret Lover:",
+			"text"    : "Please don't tell my boss, but I fell in love with this thief!",
+			"next_id" : 1,
+			"choices" : []
+		},
+
+		{
+			"id"      : 1,
+			"name"    : "Secret Lover:",
+			"text"    : "They stole more than some gold - my heart!",
+			"next_id" : -1,
+			"choices" : []
+		}
+
+	]
+
+}

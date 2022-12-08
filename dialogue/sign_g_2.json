@@ -1,0 +1,16 @@
+{
+	"Force" : 0,
+	"Random": 0,
+	"Nodes" :
+	 [
+		{
+			"id"      : 0,
+			"name"    : "Sign:",
+			"text"    : "You are leaving the peaceful village. You can hold down your sword button to do a circle sword attack!",
+			"next_id" : -1,
+			"choices" : []
+		}
+
+	]
+
+}
